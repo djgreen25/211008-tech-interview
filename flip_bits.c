@@ -42,27 +42,23 @@ void print_bits(void const * const ptr, size_t const size) {
 // TODO: define get_bit function
 
 /**
- * @brief Sets the bit at the given offset to 1 and sets result to the value of the
- * bit at the bit_offset for the given data buffer of byte_length.
+ * @brief Sets the bit at the given offset to 1
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - 8-bit, little-endian, data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
- * @param result - binary value to store the result
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
 // TODO: define set_bit function
 
 /**
- * @brief Sets the bit at the given offset to 0 and sets result to the value of the
- * bit at the bit_offset for the given data buffer of byte_length.
+ * @brief Sets the bit at the given offset to 0.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - 8-bit, little-endian, data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
- * @param result - binary value to store the result
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
 // TODO: define clear_bit function
@@ -231,7 +227,6 @@ void get_bit_test() {
 void set_bit_test() {
   uint8_t pass = 0;
   uint8_t fail = 0;
-  bool result;
   enum {
     ARR_LENGTH = 4,
   };
@@ -246,7 +241,7 @@ void set_bit_test() {
 
   printf("\t Test 1: \n");
   {
-    STATUS_CODE code = set_bit(test1_arr0, ARR_LENGTH, 40, &result);
+    STATUS_CODE code = set_bit(test1_arr0, ARR_LENGTH, 40);
     if (code == STATUS_ERROR) {
       pass += 1;
       printf("\t\t PASS: STATUS_CODE==STATUS_ERROR\n");
@@ -271,7 +266,7 @@ void set_bit_test() {
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
     uint8_t offset = i - 1;
     if (offset % 2 == 1) {
-      set_bit(test1_arr0, ARR_LENGTH, offset, &result);
+      set_bit(test1_arr0, ARR_LENGTH, offset);
     }
   }
 
@@ -293,7 +288,7 @@ void set_bit_test() {
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
     bool result;
     uint8_t offset = i - 1;
-    set_bit(test2_arr0, ARR_LENGTH, offset, &result);
+    set_bit(test2_arr0, ARR_LENGTH, offset);
   }
 
   printf("\t\t Comparing arr0 == arr1: \n\t\t ");
@@ -331,8 +326,8 @@ void clear_bit_test() {
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
     bool result;
     uint8_t offset = i - 1;
-    if (offset % 2 == 0) {
-      clear_bit(test1_arr1, ARR_LENGTH, offset, &result);
+    if (offset % 2 == 1) {
+      clear_bit(test1_arr1, ARR_LENGTH, offset);
     }
   }
 
@@ -354,7 +349,7 @@ void clear_bit_test() {
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
     bool result;
     uint8_t offset = i - 1;
-    clear_bit(test2_arr0, ARR_LENGTH, offset, &result);
+    clear_bit(test2_arr0, ARR_LENGTH, offset);
   }
 
   printf("\t\t Comparing arr0 == arr1: \n\t\t ");
