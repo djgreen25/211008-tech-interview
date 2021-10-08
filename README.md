@@ -1,5 +1,25 @@
 # Technical Interview 10/08/21
 
+## Overview
+
+Clone this repo and make your changes how you see fit. Submit changes via pull requests to `main` in this repo.
+
+## Checksums
+
+Write a Markdown file called `checksums.md` answering the following question:
+
+> What are checksums and what are they useful for?
+
+__Submit your changes via a pull request to this repository.__
+
+## Debugging
+
+Write a Markdown file called `debugging.md` answering the following question:
+
+> How would you go about locating the cause of a stack overflow or watchdog timer reset?
+
+__Submit your changes via a pull request to this repository.__
+
 ## Fun with bits
 
 In this repo you'll find [./flip_bits.c](./flip_bits.c). This file contains 3 sets of tests for functions that need to be defined. Each function has to do with bit manipulation of a data buffer. Each function's return value should be of type `STATUS_CODE`.
@@ -130,22 +150,6 @@ code = clear_bit(&data, sizeof(data), 8, &result);
 printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0 (unchanged), code == STATUS_ERROR, data=0 (unchanged)
 ```
 
-Clone this repo, define the 3 functios above however you see fit to get the tests found in `flip_bits` to pass. The tests should be unchanged and there are is a helper function `print_bits` that can print the binary bits of a data buffer for you. You can also uncomment the `#define VERBOSE` to print out all of the tests in the `get_bit` tests.
-
-__Submit your changes via a pull request to this repository.__
-
-## Checksums
-
-Write a Markdown file called `checksums.md` answering the following question:
-
-> What are checksums and what are they useful for?
-
-__Submit your changes via a pull request to this repository.__
-
-## Debugging
-
-Write a Markdown file called `debugging.md` answering the following question:
-
-> How would you go about locating the cause of a stack overflow or watchdog timer reset?
+Define the 3 functions above however you see fit to get the tests found in `flip_bits.c` to pass. The tests should be unchanged and there are is a helper function `print_bits` that can print the binary bits of a data buffer for you. You can also uncomment the `#define VERBOSE` to print out all of the tests in the `get_bit` tests.
 
 __Submit your changes via a pull request to this repository.__
