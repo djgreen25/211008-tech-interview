@@ -153,5 +153,3 @@ printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STA
 Define the 3 functions above however you see fit to get the tests found in `flip_bits.c` to pass. The tests should be unchanged and there are is a helper function `print_bits` that can print the binary bits of a data buffer for you. You can also uncomment the `#define VERBOSE` to print out all of the tests in the `get_bit` tests.
 
 __Submit your changes via a pull request to this repository.__
-
-__test__
