@@ -286,7 +286,6 @@ void set_bit_test() {
 
   printf("\t Test 3: \n");
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
-    bool result;
     uint8_t offset = i - 1;
     set_bit(test2_arr0, ARR_LENGTH, offset);
   }
@@ -324,7 +323,6 @@ void clear_bit_test() {
 
   printf("\t Test 1: \n");
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
-    bool result;
     uint8_t offset = i - 1;
     if (offset % 2 == 1) {
       clear_bit(test1_arr1, ARR_LENGTH, offset);
@@ -347,7 +345,6 @@ void clear_bit_test() {
 
   printf("\t Test 2: \n");
   for (uint8_t i = (arr_bit_length); i > 0; i--) {
-    bool result;
     uint8_t offset = i - 1;
     clear_bit(test2_arr0, ARR_LENGTH, offset);
   }
