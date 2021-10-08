@@ -41,7 +41,7 @@ Function Documentation:
  * data buffer of byte_length. i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - little-endian data buffer
- * @param byte_length - byte length of data
+ * @param byte_length - byte length of data buffer
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @param result - binary value to store the result
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
@@ -76,14 +76,12 @@ Function Documentation:
 
 ```c
 /**
- * @brief Sets the bit at the given offset to 1 and sets result to the value of the
- * bit at the bit_offset for the given data buffer of byte_length.
+ * @brief Sets the bit at the given offset to 1.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - little-endian data buffer
- * @param byte_length - byte length of data
- * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
- * @param result - binary value to store the result
+ * @param byte_length - byte length of data buffer
+ * @param bit_offset - the offset of the bit to set (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
 ```
@@ -115,14 +113,12 @@ Function Documentation:
 
 ```c
 /**
- * @brief Sets the bit at the given offset to 0 and sets result to the value of the
- * bit at the bit_offset for the given data buffer of byte_length.
+ * @brief Sets the bit at the given offset to 0.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - little-endian data buffer
- * @param byte_length - byte length of data
- * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
- * @param result - binary value to store the result
+ * @param byte_length - byte length of data buffer
+ * @param bit_offset - the offset of the bit to clear (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
 ```

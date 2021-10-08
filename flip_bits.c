@@ -34,7 +34,7 @@ void print_bits(void const * const ptr, size_t const size) {
  * data buffer of byte_length. i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - little-endian data buffer
- * @param byte_length - byte length of data
+ * @param byte_length - byte length of data buffer
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @param result - binary value to store the result
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
@@ -42,12 +42,12 @@ void print_bits(void const * const ptr, size_t const size) {
 // TODO: define get_bit function
 
 /**
- * @brief Sets the bit at the given offset to 1
+ * @brief Sets the bit at the given offset to 1.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - little-endian data buffer
- * @param byte_length - byte length of data
- * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
+ * @param byte_length - byte length of data buffer
+ * @param bit_offset - the offset of the bit to set (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
 // TODO: define set_bit function
@@ -57,8 +57,8 @@ void print_bits(void const * const ptr, size_t const size) {
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
  * @param data - little-endian data buffer
- * @param byte_length - byte length of data
- * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
+ * @param byte_length - byte length of data buffer
+ * @param bit_offset - the offset of the bit to clear (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
 // TODO: define clear_bit function
