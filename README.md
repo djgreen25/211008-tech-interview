@@ -92,22 +92,21 @@ Example:
 
 ```c
 uint8_t data = 0b1;
-bool result = 0;
 
-STATUS_CODE code = set_bit(&data, sizeof(data), 0, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=1, code == STATUS_SUCCESS, data=1
-code = set_bit(&data, sizeof(data), 1, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0, code == STATUS_SUCCESS, data=3
-code = set_bit(&data, sizeof(data), 8, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0 (unchanged), code == STATUS_ERROR, data=3 (unchanged)
+STATUS_CODE code = set_bit(&data, sizeof(data), 0);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=1
+code = set_bit(&data, sizeof(data), 1);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=3
+code = set_bit(&data, sizeof(data), 8);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_ERROR, data=3 (unchanged)
 
 data = 0b10;
-code = set_bit(&data, sizeof(data), 0, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0, code == STATUS_SUCCESS, data=3
-code = set_bit(&data, sizeof(data), 1, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=1, code == STATUS_SUCCESS, data=3
-code = set_bit(&data, sizeof(data), 8, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=1 (unchanged), code == STATUS_ERROR, data=3 (unchanged)
+code = set_bit(&data, sizeof(data), 0);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=3
+code = set_bit(&data, sizeof(data), 1);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=3
+code = set_bit(&data, sizeof(data), 8);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_ERROR, data=3 (unchanged)
 ```
 
 ### `clear_bit`
@@ -132,22 +131,21 @@ Example:
 
 ```c
 uint8_t data = 0b1;
-bool result = 0;
 
-STATUS_CODE code = clear_bit(&data, sizeof(data), 0, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0, code == STATUS_SUCCESS, data=0
-code = clear_bit(&data, sizeof(data), 1, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0, code == STATUS_SUCCESS, data=0
-code = get_bit(&data, sizeof(data), 8, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0 (unchanged), code == STATUS_ERROR, data=0 (unchanged)
+STATUS_CODE code = clear_bit(&data, sizeof(data), 0);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=0
+code = clear_bit(&data, sizeof(data), 1);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=0
+code = get_bit(&data, sizeof(data), 8);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_ERROR, data=0 (unchanged)
 
 data = 0b10;
-code = clear_bit(&data, sizeof(data), 0, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0, code == STATUS_SUCCESS, data=2
-code = clear_bit(&data, sizeof(data), 1, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0, code == STATUS_SUCCESS, data=0
-code = clear_bit(&data, sizeof(data), 8, &result);
-printf("result: %u, code: %s, data: %u\n", result, code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // result=0 (unchanged), code == STATUS_ERROR, data=0 (unchanged)
+code = clear_bit(&data, sizeof(data), 0);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=2
+code = clear_bit(&data, sizeof(data), 1);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_SUCCESS, data=0
+code = clear_bit(&data, sizeof(data), 8);
+printf("code: %s, data: %u\n", code == STATUS_SUCCESS ? "STATUS_SUCCESS" : "STATUS_ERROR", data); // code == STATUS_ERROR, data=0 (unchanged)
 ```
 
 Define the 3 functions above however you see fit to get the tests found in `flip_bits.c` to pass. The tests should be unchanged and there are is a helper function `print_bits` that can print the binary bits of a data buffer for you. You can also uncomment the `#define VERBOSE` to print out all of the tests in the `get_bit` tests.
