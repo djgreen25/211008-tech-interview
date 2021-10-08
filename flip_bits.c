@@ -33,7 +33,7 @@ void print_bits(void const * const ptr, size_t const size) {
  * @brief Gets result of the value of the bit at the bit_offset for the given
  * data buffer of byte_length. i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
- * @param data - 8-bit, little-endian, data buffer
+ * @param data - little-endian data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @param result - binary value to store the result
@@ -45,7 +45,7 @@ void print_bits(void const * const ptr, size_t const size) {
  * @brief Sets the bit at the given offset to 1
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
- * @param data - 8-bit, little-endian, data buffer
+ * @param data - little-endian data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
@@ -56,7 +56,7 @@ void print_bits(void const * const ptr, size_t const size) {
  * @brief Sets the bit at the given offset to 0.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
- * @param data - 8-bit, little-endian, data buffer
+ * @param data - little-endian data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request

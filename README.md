@@ -40,7 +40,7 @@ Function Documentation:
  * @brief Gets result of the value of the bit at the bit_offset for the given
  * data buffer of byte_length. i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
- * @param data - 8-bit, little-endian, data buffer
+ * @param data - little-endian data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @param result - binary value to store the result
@@ -80,7 +80,7 @@ Function Documentation:
  * bit at the bit_offset for the given data buffer of byte_length.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
- * @param data - 8-bit, little-endian, data buffer
+ * @param data - little-endian data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @param result - binary value to store the result
@@ -119,7 +119,7 @@ Function Documentation:
  * bit at the bit_offset for the given data buffer of byte_length.
  * i.e. for 4-byte buffer, offset=31 is msb, offset=0 is lsb.
  * 
- * @param data - 8-bit, little-endian, data buffer
+ * @param data - little-endian data buffer
  * @param byte_length - byte length of data
  * @param bit_offset - the offset of the bit to retrieve (0 is lsb)
  * @param result - binary value to store the result
