@@ -1,0 +1,3 @@
+> What are checksums and what are they useful for?
+
+Checksums are a way to verify the contents of a file or message. They add up all the bits in the file or message and you can use that number to compare against another checksum of a different file or message. If they match, the file or message is the same, otherwise they are different. This is useful in communications when you want ensure the message you are receiving is the same as the one you are expecting. This is also useful for verifying that a program was successfully loaded into flash on a processor. 

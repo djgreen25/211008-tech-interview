@@ -1,0 +1,3 @@
+> How would you go about locating the cause of a stack overflow or watchdog timer reset?
+
+I would use a debugger and start by setting breakpoints in the program to try and isolate where the issue is happening. If I can run to all of my breakpoints, I know those paths are good. If I can't run to a breakpoint, and I should be able to, then I can say that the issue is happening along the path to that breakpoint. Looking at the function calls in that path, I can set more breakpoints to further isolate the problem until I found the issue causing the stack overflow or watchdog timer reset.

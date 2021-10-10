@@ -39,7 +39,21 @@ void print_bits(void const * const ptr, size_t const size) {
  * @param result - binary value to store the result
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
-// TODO: define get_bit function
+STATUS_CODE get_bit(uint8_t data[], uint8_t byte_length, uint8_t bit_offset, bool * result)
+{
+  STATUS_CODE retVal = STATUS_ERROR; // Default return value
+  uint8_t byte_num = bit_offset / BITS_IN_A_BYTE; // Byte number that bit at bit_offset is in 
+
+  // Check for valid bit_offset 
+  if (byte_num < byte_length)
+  {
+    // If valid bit_offset, get the value of the bit at bit_offset
+    *result = (bool)(data[byte_num] & (1 << (bit_offset % BITS_IN_A_BYTE)));
+    retVal = STATUS_SUCCESS;
+  }
+
+  return retVal;  
+}
 
 /**
  * @brief Sets the bit at the given offset to 1.
@@ -50,7 +64,21 @@ void print_bits(void const * const ptr, size_t const size) {
  * @param bit_offset - the offset of the bit to set (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
-// TODO: define set_bit function
+STATUS_CODE set_bit(uint8_t data[], uint8_t byte_length, uint8_t bit_offset)
+{
+  STATUS_CODE retVal = STATUS_ERROR; // Default return value
+  uint8_t byte_num = bit_offset / BITS_IN_A_BYTE; // Byte number that bit at bit_offset is in 
+
+  // Check for valid bit_offset 
+  if (byte_num < byte_length)
+  {
+    // If valid bit_offset, set the bit at bit_offset
+    data[byte_num] |= (1 << (bit_offset % BITS_IN_A_BYTE));
+    retVal = STATUS_SUCCESS;
+  }
+
+  return retVal;  
+}
 
 /**
  * @brief Sets the bit at the given offset to 0.
@@ -61,7 +89,21 @@ void print_bits(void const * const ptr, size_t const size) {
  * @param bit_offset - the offset of the bit to clear (0 is lsb)
  * @return STATUS_CODE - STATUS_SUCCESS if request okay, STATUS_ERROR if out of bounds request
  */
-// TODO: define clear_bit function
+STATUS_CODE clear_bit(uint8_t data[], uint8_t byte_length, uint8_t bit_offset)
+{
+  STATUS_CODE retVal = STATUS_ERROR; // Default return value
+  uint8_t byte_num = bit_offset / BITS_IN_A_BYTE; // Byte number that bit at bit_offset is in 
+
+  // Check for valid bit_offset 
+  if (byte_num < byte_length)
+  {
+    // If valid bit_offset, clear the bit at bit_offset
+    data[byte_num] &= ~(1 << (bit_offset % BITS_IN_A_BYTE));
+    retVal = STATUS_SUCCESS;
+  }
+
+  return retVal;  
+}
 
 void get_bit_test() {
   uint8_t pass = 0;
